@@ -14,6 +14,9 @@
 		2B244985211712EA001DF2AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B244983211712EA001DF2AB /* LaunchScreen.storyboard */; };
 		2B244990211712EA001DF2AB /* DiaryTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24498F211712EA001DF2AB /* DiaryTestTests.swift */; };
 		2B24499B211712EA001DF2AB /* DiaryTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B24499A211712EA001DF2AB /* DiaryTestUITests.swift */; };
+		2B2449AE21171431001DF2AB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449AD21171431001DF2AB /* Identifiable.swift */; };
+		2B2449B02117146C001DF2AB /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449AF2117146C001DF2AB /* Entry.swift */; };
+		2B2449B221171482001DF2AB /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449B121171482001DF2AB /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		2B244996211712EA001DF2AB /* DiaryTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaryTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B24499A211712EA001DF2AB /* DiaryTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTestUITests.swift; sourceTree = "<group>"; };
 		2B24499C211712EA001DF2AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B2449AD21171431001DF2AB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		2B2449AF2117146C001DF2AB /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		2B2449B121171482001DF2AB /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,11 @@
 		2B244979211712E9001DF2AB /* DiaryTest */ = {
 			isa = PBXGroup;
 			children = (
-				2B24497A211712E9001DF2AB /* AppDelegate.swift */,
-				2B24497C211712E9001DF2AB /* ViewController.swift */,
-				2B24497E211712E9001DF2AB /* Main.storyboard */,
-				2B244981211712EA001DF2AB /* Assets.xcassets */,
-				2B244983211712EA001DF2AB /* LaunchScreen.storyboard */,
-				2B244986211712EA001DF2AB /* Info.plist */,
+				2B2449AC211713C0001DF2AB /* Shared */,
+				2B2449AB211713B4001DF2AB /* Controllers */,
+				2B2449AA2117138B001DF2AB /* Model */,
+				2B2449A921171371001DF2AB /* Storyboards */,
+				2B2449A821171323001DF2AB /* Resource */,
 			);
 			path = DiaryTest;
 			sourceTree = "<group>";
@@ -123,6 +128,50 @@
 				2B24499C211712EA001DF2AB /* Info.plist */,
 			);
 			path = DiaryTestUITests;
+			sourceTree = "<group>";
+		};
+		2B2449A821171323001DF2AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2B244981211712EA001DF2AB /* Assets.xcassets */,
+				2B244986211712EA001DF2AB /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2B2449A921171371001DF2AB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2B24497E211712E9001DF2AB /* Main.storyboard */,
+				2B244983211712EA001DF2AB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2B2449AA2117138B001DF2AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B2449AF2117146C001DF2AB /* Entry.swift */,
+				2B2449B121171482001DF2AB /* Diary.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B2449AB211713B4001DF2AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B24497C211712E9001DF2AB /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2B2449AC211713C0001DF2AB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2B24497A211712E9001DF2AB /* AppDelegate.swift */,
+				2B2449AD21171431001DF2AB /* Identifiable.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2449B02117146C001DF2AB /* Entry.swift in Sources */,
+				2B2449B221171482001DF2AB /* Diary.swift in Sources */,
 				2B24497D211712E9001DF2AB /* ViewController.swift in Sources */,
+				2B2449AE21171431001DF2AB /* Identifiable.swift in Sources */,
 				2B24497B211712E9001DF2AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DiaryTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DiaryTest/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DiaryTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DiaryTest/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

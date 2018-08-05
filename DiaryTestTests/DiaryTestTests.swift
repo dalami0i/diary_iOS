@@ -10,6 +10,7 @@ import XCTest
 @testable import DiaryTest
 
 class DiaryTestTests: XCTestCase {
+//    var newEntry: Entry!
     
     override func setUp() {
         super.setUp()
@@ -21,16 +22,75 @@ class DiaryTestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEditEntryText(){
+        let newEntry = Entry(id:0, createdAt: Date(), text:"First diary")
+        newEntry.text = "First Test"
+        XCTAssertEqual(newEntry.text, "First Test")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testAddEntryToDiary(){
+        let diary = InMemoryDiary()
+        let newDiary = Entry(id:0, createdAt:Date(), text:"Diary")
+        
+        diary.add(newDiary)
+        
+        let entryInDiary: Entry? = diary.entry(with: 0)
+        
+        XCTAssertEqual(entryInDiary, .some(newDiary))
+        XCTAssertTrue(entryInDiary === newDiary)
+        XCTAssertTrue(entryInDiary?.isIdentical(to: newDiary) == true)
     }
+    
+    func testGetEntryWithId(){
+        let oldEntry = Entry(id:1, createdAt:Date(), text:"Diary")
+        let diary = InMemoryDiary(entries: [oldEntry])
+        
+        let entry = diary.entry(with:1)
+        
+        XCTAssertEqual(entry, .some(oldEntry))
+        XCTAssertTrue(entry?.isIdentical(to: oldEntry) == true)
+    }
+    
+    func testUpdateEntry(){
+        let oldEntry = Entry(id: 1, createdAt: Date(), text:"Diary")
+        let diary = InMemoryDiary(entries: [oldEntry])
+        
+        oldEntry.text = "Modified Diary"
+        diary.update(oldEntry)
+        
+        let entry = diary.entry(with: 1)
+        XCTAssertEqual(entry, .some(oldEntry))
+        XCTAssertTrue(entry?.isIdentical(to: oldEntry) == true)
+        XCTAssertEqual(entry?.text, .some("Modified Diary"))
+    }
+    
+    func testRemoveEntryToDiary(){
+        let newDiary = InMemoryDiary()
+        let newEntry = Entry(id: 1, createdAt: Date(), text:"Diary")
+        newDiary.add(newEntry)
+        
+        newDiary.remove(newEntry)
+        
+        let entry = newDiary.recentEntries(max: 3)
+        XCTAssertTrue(entry.count == 0)
+        
+    }
+    
+    func test_getRecentEntries(){
+        let dayBeforeYesterday = Entry(id: 1, createdAt: Date.distantPast, text: "a couple of days ago")
+        let yesterDay = Entry(id: 2, createdAt: Date(), text: "yesterday")
+        let today = Entry(id: 3, createdAt: Date.distantFuture, text:"today")
+        let diary = InMemoryDiary(entries: [dayBeforeYesterday, yesterDay,today])
+        
+        let entries = diary.recentEntries(max: 3)
+        
+        XCTAssertEqual(entries.count, 3)
+        XCTAssertEqual(entries, [today, yesterDay, dayBeforeYesterday])
+    }
+    
+    
+    
+    
+    
     
 }
