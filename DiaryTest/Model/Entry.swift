@@ -9,9 +9,9 @@
 import Foundation
 
 
-class Entry {
-    let id: Int
-    let createdAt: Date
+class Entry: EntryType {
+    var id: Int
+    var createdAt: Date
     var text: String
     
     init(id: Int, createdAt: Date, text: String) {
@@ -30,5 +30,4 @@ extension Entry: Equatable{
             && lhs.text == rhs.text
     }
 }
-
 

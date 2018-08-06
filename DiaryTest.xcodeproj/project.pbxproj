@@ -17,6 +17,7 @@
 		2B2449AE21171431001DF2AB /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449AD21171431001DF2AB /* Identifiable.swift */; };
 		2B2449B02117146C001DF2AB /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449AF2117146C001DF2AB /* Entry.swift */; };
 		2B2449B221171482001DF2AB /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449B121171482001DF2AB /* Diary.swift */; };
+		2B2449B421172E09001DF2AB /* EntryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2449B321172E09001DF2AB /* EntryType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2B2449AD21171431001DF2AB /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		2B2449AF2117146C001DF2AB /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		2B2449B121171482001DF2AB /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		2B2449B321172E09001DF2AB /* EntryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				2B2449AF2117146C001DF2AB /* Entry.swift */,
 				2B2449B121171482001DF2AB /* Diary.swift */,
+				2B2449B321172E09001DF2AB /* EntryType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2449B421172E09001DF2AB /* EntryType.swift in Sources */,
 				2B2449B02117146C001DF2AB /* Entry.swift in Sources */,
 				2B2449B221171482001DF2AB /* Diary.swift in Sources */,
 				2B24497D211712E9001DF2AB /* ViewController.swift in Sources */,
