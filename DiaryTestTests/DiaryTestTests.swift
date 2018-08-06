@@ -88,9 +88,22 @@ class DiaryTestTests: XCTestCase {
         XCTAssertEqual(entries, [today, yesterDay, dayBeforeYesterday])
     }
     
+    func test_getMoreThanExists(){
+        let dayBeforeYesterday = Entry(id: 1, createdAt: Date.distantPast, text: "a couple of days ago")
+        let yesterDay = Entry(id: 2, createdAt: Date(), text: "yesterday")
+        let today = Entry(id: 3, createdAt: Date.distantFuture, text:"today")
+        let diary = InMemoryDiary(entries: [dayBeforeYesterday, yesterDay,today])
+        
+        let entries = diary.recentEntries(max: 10)
+        
+        XCTAssertEqual(entries.count, 3)
+        XCTAssertEqual(entries, [today, yesterDay, dayBeforeYesterday])
+        
+    }
     
-    
-    
+    func test_checkEntryTypeTest(){
+        
+    }
     
     
 }
