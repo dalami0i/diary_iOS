@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol EntryType {
     var id: Int{ set get }
     var createdAt: Date{ set get }
